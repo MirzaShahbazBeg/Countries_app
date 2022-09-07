@@ -16,13 +16,11 @@ class CountryResponse {
     required this.name,
     required this.capital,
     required this.currencies,
-    required this.flag,
   });
 
   final Name? name;
   final Currencies? currencies;
   final List<String>? capital;
-  final String? flag;
 
   factory CountryResponse.fromJson(Map<String, dynamic> json) =>
       CountryResponse(
@@ -33,7 +31,6 @@ class CountryResponse {
         capital: json["capital"] == null
             ? null
             : List<String>.from(json["capital"].map((x) => x)),
-        flag: json["flag"] == null ? null : json["flag"],
       );
 }
 
